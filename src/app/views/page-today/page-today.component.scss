@@ -1,0 +1,30 @@
+@import '../../styles/vars';
+
+.page-today {
+  background: #fff;
+}
+
+.layoutTop {
+  background-color: $tBlue;
+  color: #fff;
+}
+
+.layoutBottom {
+  background: #eee;
+}
+
+.topExpander {
+  background: #fff;
+  .expanderLabel {
+    background: $tBlue;
+    text-align: center;
+    color: #fff;
+    height: 20;
+    margin-bottom: 10;
+  }
+}
+
+.expandToday {
+  // .layoutTop { height: 500; }
+}
+

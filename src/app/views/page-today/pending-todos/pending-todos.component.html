@@ -1,0 +1,10 @@
+<StackLayout class="listOfPendingTodos">  
+  <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+      <StackLayout orientation="horizontal"> 
+        <StackLayout *ngFor="let item of todos" class="pendingTodo" >
+          <Label [text]="item.title" class=""></Label>
+          <time-span [spans]="item.timespans" [style]="'compact'"></time-span>
+        </StackLayout>
+    </StackLayout> 
+  </ScrollView>
+</StackLayout>

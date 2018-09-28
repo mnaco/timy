@@ -1,0 +1,39 @@
+
+<StackLayout class="page">
+  <!-- <GridLayout #testRef rows="*, 240" columns="*"> -->
+  <!-- <GridLayout rows="auto, *" columns="*" [class.expandToday]="expandToday"> -->
+  <GridLayout [rows]="rows" columns="*">
+    
+    <StackLayout row="0" class="layoutTop" >
+      <GridLayout rows="auto,*,30" columns="" >
+        
+        <!-- user profile and setting burger menu-->
+        <StackLayout row="0">
+          <GridLayout rows="*" columns="*,auto">
+            <Label row="0" text="Hello User" textWrap="true"></Label>
+            <Label row="1" text="MENU" class="text-right"></Label>
+          </GridLayout>
+        </StackLayout>
+        
+        <!-- today overview -->
+        <StackLayout row="1">
+          <today-overview></today-overview>
+          <today-time-spans></today-time-spans>
+        </StackLayout>
+        
+        <!-- 'expander' trigger -->
+        <GridLayout row="2" rows="" columns="*,100,*" class="topExpander">
+          <Label col="1" text="===" class="expanderLabel" (tap)="expandTodayView($event)"></Label>
+        </GridLayout>
+
+      </GridLayout>
+    </StackLayout>
+    
+    <StackLayout row="1" class="layoutBottom">
+      <pending-todos></pending-todos>
+      <pending-cats></pending-cats>
+    </StackLayout>
+    
+  </GridLayout>
+</StackLayout>
+

@@ -1,0 +1,39 @@
+<GridLayout rows="auto" columns="*, auto, auto" class="todayOverview">
+  
+  <StackLayout col="0" class="statSection statDate">
+    <StackLayout class="sectionTitle">
+      <Label text="{{ today | date: 'EEEE, MMM d' }}"></Label>
+    </StackLayout>
+    <StackLayout class="statData"> 
+      <Label text="TODAY" class="total"></Label>
+    </StackLayout>
+  </StackLayout>
+
+  <StackLayout col="1" class="statSection statEstimation">
+    <StackLayout class="sectionTitle">
+      <Label text="Est.TIME"></Label>
+    </StackLayout>
+    <Label class="statData">  
+      <FormattedString>
+        <Span text="5:00"></Span>
+        <Span text=" / "></Span>
+        <Span text="7:45" class="total"></Span>
+      </FormattedString>
+    </Label>
+  </StackLayout>
+  
+  <StackLayout col="2" class="statSection statTodos">
+      <StackLayout class="sectionTitle">
+        <Label text="TODOS"></Label>
+      </StackLayout>
+      <Label class="statData"> 
+        <FormattedString verticalAlignment="top">
+            <Span text="5"></Span>
+            <Span text=" / "></Span>
+            <Span text="7" class="total"></Span>
+        </FormattedString>
+      </Label>
+  </StackLayout> 
+
+</GridLayout>
+

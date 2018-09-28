@@ -1,0 +1,27 @@
+.timeSpan {
+  width: 32;
+  height: 12;
+  border-color: #333;
+  border-width: 1;
+  margin: 10 5 10 0;
+}
+.timeSpanValue {
+  background: #999;
+  border-width: 1;
+  border-color: #fff;
+}
+
+// style compact
+.compact {
+  .timeSpan {
+    width: 16;
+    height: 8;
+    border-color: #999;
+    // background: #ccc;
+    // border-width: 0;
+    margin: 5 2 5 0;
+  }
+  .timeSpanValue {
+    border-width: 0;
+  }
+}

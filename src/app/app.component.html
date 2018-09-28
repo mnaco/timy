@@ -1,0 +1,16 @@
+<!-- <page-router-outlet></page-router-outlet> -->
+
+<TabView androidTabsPosition="bottom" selectedIndex="0">
+  <page-router-outlet
+    *tabItem="{title: 'Today'}" 
+    name="todayTab">
+  </page-router-outlet>
+  <page-router-outlet
+    *tabItem="{title: 'Todos'}" 
+    name="todosTab">
+  </page-router-outlet>
+  <page-router-outlet
+    *tabItem="{title: 'Lists'}" 
+    name="catsTab">
+  </page-router-outlet>
+</TabView>

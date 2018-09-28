@@ -1,0 +1,8 @@
+<StackLayout orientation="horizontal" class="{{style}}">
+  <StackLayout *ngFor="let span of spans" >
+    <GridLayout columns="{{span}}*, {{ 100 - span }}*" class="timeSpan">
+        <StackLayout col="0" class="timeSpanValue"></StackLayout>
+    </GridLayout>
+  </StackLayout>
+</StackLayout>
+<!-- <time-span [spans]=[100,20,0] [style]=""></time-span> -->

@@ -1,0 +1,33 @@
+@import '../../../styles/vars';
+
+$tFontSize: 18; 
+
+.todayOverview {
+  font-size: $tFontSize;
+  // padding: 10;
+  background: $tBlue;
+  color: #fff;
+}
+
+.statSection {
+  font-family: "RobotoCondensed-Regular", "Roboto Condensed";
+  text-align: right;
+  &.statDate { 
+    text-align: left; 
+  }
+  .total { 
+    font-size: $tFontSize + 12; 
+  }
+  .sectionTitle { 
+    font-size: $tFontSize - 4;
+    padding-bottom: 4; 
+  }
+}
+
+.statEstimation {
+  margin: 0 10;
+  padding: 0 10;
+  border-right-width: 1;
+  border-right-color: rgba(255,255,255,0.5);
+}
+

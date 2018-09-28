@@ -1,0 +1,61 @@
+
+<ScrollView>
+    
+  <StackLayout>  
+
+      <StackLayout class="">
+        <today-overview></today-overview>
+        <today-time-spans></today-time-spans>
+      </StackLayout>
+  
+      <StackLayout class="listItemContainer">
+          <StackLayout *ngFor="let item of todos" class="listItem" >
+            <Label [text]="item.title" class=""></Label>
+            <time-span [spans]="item.timespans" [style]="''"></time-span>
+          </StackLayout>
+      </StackLayout>
+     
+      <StackLayout class="dateHeader">
+        <Label text="Tomorrow" textWrap="true"></Label>
+      </StackLayout>
+      <StackLayout>
+          <StackLayout *ngFor="let item of todos" class="listItem" >
+            <Label [text]="item.title" class=""></Label>
+            <time-span [spans]="item.timespans" [style]="''"></time-span>
+          </StackLayout>
+      </StackLayout>
+
+      <StackLayout>
+          <StackLayout *ngFor="let item of todos" class="listItem" >
+            <Label [text]="item.title" class=""></Label>
+            <time-span [spans]="item.timespans" [style]="''"></time-span>
+          </StackLayout>
+      </StackLayout>
+    
+  </StackLayout>
+
+</ScrollView>
+
+
+
+
+<!-- 
+<GridLayout class="listOflistItems page" rows="*" columns="*">
+  <ListView row="0" [items]="todos" class="page">
+      <ng-template let-item="item" let-odd="odd" let-even="even">
+        <StackLayout class="listItem">
+          <Label [text]="item.title" class=""></Label>
+          <time-span [spans]="item.timespans"></time-span>
+        </StackLayout>
+      </ng-template>
+  </ListView>
+</GridLayout>
+-->
+
+
+
+
+        
+
+
+

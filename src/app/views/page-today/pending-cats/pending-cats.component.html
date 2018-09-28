@@ -1,0 +1,10 @@
+<StackLayout>
+  <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+    <StackLayout orientation="horizontal">  
+      <StackLayout *ngFor="let item of cats" (tap)="selectCat(item.id)" class="pendingCat" [class.isActive]="item.id === selectedCat">
+          <Label [text]="item.name"></Label>
+          <Label [text]="item.id"></Label>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>

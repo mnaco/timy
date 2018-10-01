@@ -4,13 +4,11 @@ $tFontSize: 18;
 
 .todayOverview {
   font-size: $tFontSize;
-  // padding: 10;
-  background: $tBlue;
-  color: #fff;
+  padding: 10 $pagePadding 0;
+  font-family: "Roboto Condensed, RobotoCondensed-Regular";
 }
 
 .statSection {
-  font-family: "RobotoCondensed-Regular", "Roboto Condensed";
   text-align: right;
   &.statDate { 
     text-align: left; 
@@ -20,7 +18,8 @@ $tFontSize: 18;
   }
   .sectionTitle { 
     font-size: $tFontSize - 4;
-    padding-bottom: 4; 
+    padding-bottom: 2; 
+    font-family: "Roboto Condensed, RobotoCondensed-Regular";
   }
 }
 

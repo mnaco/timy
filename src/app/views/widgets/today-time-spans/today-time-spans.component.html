@@ -1,6 +1,6 @@
-<StackLayout orientation="horizontal">
+<StackLayout orientation="horizontal" class="todayTimeSpans">
   <StackLayout *ngFor="let item of todayTodos" orientation="horizontal" style="margin-right: 10;">
-    <time-span [spans]="item.timespans" [style]="'compact'"></time-span> 
+    <time-span [spans]="item.timespans" [style]="'compact light'"></time-span> 
   </StackLayout>
 </StackLayout>
 <!-- <time-span [spans]=[100,20,0] [style]=""></time-span>  -->

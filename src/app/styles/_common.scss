@@ -1,7 +1,30 @@
 @import '~nativescript-theme-core/scss/light';
-
-$primary: #900;
-
+// $primary: #900;
 @import '~nativescript-theme-core/scss/index';
 
-// @import 'vars';
+
+// common styles of timy app
+@import 'vars';
+
+.fa {
+  font-family: "FontAwesome";
+}
+
+.todayHead { 
+  background: $themeColor; 
+  color: #fff;
+}
+
+.btn {
+  border-width: 1;
+  border-style: solid;
+  border-color: #999; 
+  border-radius: 5;
+  background: #eee;
+  color: $themeColor;
+  &.btnInfo { 
+    background: $themeColorInfo;
+    border-color: rgba(255,255,255,0.8);
+    color: #fff;
+  }
+}

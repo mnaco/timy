@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { isAndroid } from "tns-core-modules/platform";
 import { SwipeGestureEventData } from 'tns-core-modules/ui/gestures/gestures';
+import { Todo } from '../../classes/todo';
+import { DataTodosService } from '../../services/data-todos.service';
 
 @Component({
 	moduleId: module.id,
@@ -13,11 +15,14 @@ import { SwipeGestureEventData } from 'tns-core-modules/ui/gestures/gestures';
 export class PageTodayComponent implements OnInit {
 	public rows: string;
 	expandToday: boolean = false;
-
+	todayTodos: Todo[] = [];
 
 	// @ViewChild('testRef') testRef: ElementRef;
 
-	constructor ( private page: Page ) { 
+	constructor ( 
+		private dataTodosService: DataTodosService,
+		private page: Page 
+		) { 
 		if (isAndroid) {
 			this.page.actionBarHidden = true;
 		}
@@ -26,6 +31,7 @@ export class PageTodayComponent implements OnInit {
 	ngOnInit() { 
 		// let myGridLayout = <GridLayout>this.testRef.nativeElement;
 		this.setRows(240);
+		this.todayTodos = this.dataTodosService.getTodayTodos();
 	}
 
 	private setRows(size) {

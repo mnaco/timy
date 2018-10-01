@@ -5,24 +5,36 @@
   <GridLayout [rows]="rows" columns="*">
     
     <StackLayout row="0" class="layoutTop" >
-      <GridLayout rows="auto,*,30" columns="" >
+      <GridLayout rows="auto,auto,*,30" columns="" >
         
         <!-- user profile and setting burger menu-->
-        <StackLayout row="0">
+        <StackLayout row="0" class="headingMenu">
           <GridLayout rows="*" columns="*,auto">
             <Label row="0" text="Hello User" textWrap="true"></Label>
-            <Label row="1" text="MENU" class="text-right"></Label>
+            <Label row="1" class="page-icon fa text-right" text="&#xf0c9;"></Label> 
           </GridLayout>
         </StackLayout>
         
         <!-- today overview -->
-        <StackLayout row="1">
+        <StackLayout row="1" class="todayHead">
           <today-overview></today-overview>
           <today-time-spans></today-time-spans>
+          <Button text="START NOW" class="btn btnInfo"></Button>
+        </StackLayout>
+
+        <!-- list of today todos -->
+        <StackLayout row="2" class="listTodayTodos">
+          <ScrollView>  
+            <StackLayout>
+              <StackLayout *ngFor="let item of todayTodos" class="todayItem">
+                <Label text="{{ item.title }}" textWrap="true"></Label>
+              </StackLayout>
+            </StackLayout>
+          </ScrollView>
         </StackLayout>
         
         <!-- 'expander' trigger -->
-        <GridLayout row="2" rows="" columns="*,100,*" class="topExpander">
+        <GridLayout row="3" rows="" columns="*,100,*" class="topExpander">
           <Label col="1" text="===" class="expanderLabel" (tap)="expandTodayView($event)"></Label>
         </GridLayout>
 

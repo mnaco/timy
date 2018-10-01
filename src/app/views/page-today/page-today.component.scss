@@ -4,8 +4,17 @@
   background: #fff;
 }
 
+.headingMenu {
+  padding: $pagePadding;
+  margin-bottom: 10;
+  background: #333;
+  border-bottom-width: 1;
+  border-bottom-style: solid;
+  border-bottom-color: #fff; 
+}
+
 .layoutTop {
-  background-color: $tBlue;
+  background-color: $themeColor;
   color: #fff;
 }
 
@@ -16,11 +25,24 @@
 .topExpander {
   background: #fff;
   .expanderLabel {
-    background: $tBlue;
+    background: $themeColor;
     text-align: center;
     color: #fff;
     height: 20;
     margin-bottom: 10;
+  }
+}
+
+.btn {
+  font-size: 24;
+}
+
+.listTodayTodos {
+  .todayItem {
+    padding: 10 $pagePadding;
+    border-bottom-color: rgba(255,255,255,0.3);
+    border-bottom-style: solid;
+    border-bottom-width: 1;
   }
 }
 

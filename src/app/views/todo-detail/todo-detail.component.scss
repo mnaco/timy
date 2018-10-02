@@ -1,0 +1,15 @@
+@import "../../styles/vars";
+
+.todoDetail {
+  padding: 15 $pagePadding;
+  border-bottom-width: 1;
+  border-bottom-style: solid;
+  border-bottom-color: #eee;
+  font-size: 18;
+  color: #999;
+
+  .title {
+    font-size: 12;
+    padding-bottom: 5;
+  }
+}

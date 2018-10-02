@@ -5,6 +5,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { PageTodayComponent } from "./views/page-today/page-today.component";
 import { PageTodosComponent } from "./views/page-todos/page-todos.component";
 import { PageCatsComponent } from "./views/page-cats/page-cats.component";
+import { TodoDetailComponent } from "./views/todo-detail/todo-detail.component";
 
 const routes: Routes = [
     
@@ -12,6 +13,8 @@ const routes: Routes = [
     { path: 'todos', component: PageTodosComponent, outlet: 'todosTab' },
     { path: 'today', component: PageTodayComponent, outlet: 'todayTab'},
     { path: 'cats', component: PageCatsComponent, outlet: 'catsTab'},
+
+    { path: "item/:id", component: TodoDetailComponent, outlet: "todosTab" }
     
 ];
 

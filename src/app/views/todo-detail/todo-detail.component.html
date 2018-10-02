@@ -1,0 +1,49 @@
+<ActionBar class="action-bar">
+    <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label class="action-bar-title" [text]="item.title"></Label>
+</ActionBar>
+
+<GridLayout columns="*" rows="*, 40">
+
+  <StackLayout row="0">  
+    
+    
+
+    <GridLayout rows="*" columns="*,40" class="todoDetail" verticalAlignment="top">
+      <StackLayout col="0">
+          <Label text="Todo" class="title"></Label>
+          <Label [text]="item.title" textWrap="true"></Label>
+      </StackLayout>
+      <StackLayout col="1">  
+        <Label class="fa" text="&#xf00d;" ></Label>
+      </StackLayout>
+    </GridLayout>
+
+     <GridLayout rows="*" columns="*,40" class="todoDetail" verticalAlignment="top">
+      <StackLayout col="0">
+          <Label text="List" class="title"></Label>
+          <Label [text]="item.list" textWrap="true"></Label>
+      </StackLayout>
+      <StackLayout col="1">  
+        <Label class="fa" text="&#xf00d;" ></Label>
+      </StackLayout>
+    </GridLayout>
+
+     <GridLayout rows="*" columns="*,40" class="todoDetail" verticalAlignment="top">
+      <StackLayout col="0">
+          <Label text="Due Date" class="title"></Label>
+          <Label [text]="01.01.01" textWrap="true"></Label>
+      </StackLayout>
+      <StackLayout col="1">  
+        <Label class="fa" text="&#xf00d;" ></Label>
+      </StackLayout>
+    </GridLayout>  
+
+  </StackLayout>
+
+
+  <StackLayout row="1" background="#eee">
+    <Label verticalAlignment="top" class="fa" text="Delete"></Label>
+  </StackLayout>
+
+</GridLayout>

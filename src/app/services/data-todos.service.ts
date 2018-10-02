@@ -22,6 +22,11 @@ export class DataTodosService {
 
   constructor() { }
 
+
+  getTodo(id: number):Todo {
+    return this.todos.filter((item) => item.id === id)[0];
+  }
+
   getTodos() {
     return this.todos;
   }

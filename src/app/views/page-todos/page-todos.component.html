@@ -9,7 +9,7 @@
       </StackLayout>
   
       <StackLayout class="listItemContainer">
-          <StackLayout *ngFor="let item of todos" class="listItem" >
+          <StackLayout *ngFor="let item of todos" class="listItem todoItem" [class.completed]='item.complete' >
             <Label [text]="item.title" class=""></Label>
             <time-span [spans]="item.timespans" [style]="''"></time-span>
           </StackLayout>

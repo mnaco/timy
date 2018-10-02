@@ -15,6 +15,7 @@ import { DataTodosService } from '../../services/data-todos.service';
 export class PageTodayComponent implements OnInit {
 	public rows: string;
 	expandToday: boolean = false;
+	classListTodayTodos: string;
 	todayTodos: Todo[] = [];
 
 	// @ViewChild('testRef') testRef: ElementRef;
@@ -30,28 +31,32 @@ export class PageTodayComponent implements OnInit {
 
 	ngOnInit() { 
 		// let myGridLayout = <GridLayout>this.testRef.nativeElement;
-		this.setRows(240);
+		// this.setRows(200);
+		this.setRows('auto, *');
 		this.todayTodos = this.dataTodosService.getTodayTodos();
 	}
 
 	private setRows(size) {
-		this.rows = "*," + size;
+		// this.rows = "*, " + size;
+		this.rows = size;
 	}
 
-	onSwipe(args: SwipeGestureEventData) {
-		if (args.direction === 8) { // down
-			this.setRows(20);
-			// this.expandToday = true;
-		}
-		if (args.direction === 4) { //up
-			this.setRows(240);
-			// this.expandToday = false;
-		}
-	}
+	// onSwipe(args: SwipeGestureEventData) {
+	// 	if (args.direction === 8) { // down
+	// 		this.setRows(20);
+	// 		// this.expandToday = true;
+	// 	}
+	// 	if (args.direction === 4) { //up
+	// 		this.setRows(240);
+	// 		// this.expandToday = false;
+	// 	}
+	// }
 
 	expandTodayView() {
 		console.log(this.expandToday);
-		let rowSize = this.expandToday ? 20 : 240;
+		// let rowSize = this.expandToday ? 240 : 20;
+		let rowSize = this.expandToday ? 'auto, *' : '*, 20';
+		this.classListTodayTodos = this.expandToday ? "" : "expand";
 		this.expandToday = !this.expandToday;
 		this.setRows(rowSize);
 	}

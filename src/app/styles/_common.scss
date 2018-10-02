@@ -28,3 +28,10 @@
     color: #fff;
   }
 }
+
+.todoItem {
+  &.completed {
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+}

@@ -1,10 +1,14 @@
 <StackLayout class="listOfPendingTodos">  
   <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
       <StackLayout orientation="horizontal"> 
-        <StackLayout *ngFor="let item of todos" class="pendingTodo" >
-          <Label [text]="item.title" class=""></Label>
-          <time-span [spans]="item.timespans" [style]="'compact'"></time-span>
-        </StackLayout>
+        <Gridlayout rows="*, 20" cols="*" *ngFor="let item of todos" class="pendingTodo" >
+          <StackLayout row="0" verticalAlignment="top" class="pendingTodoTitle">
+            <Label [text]="item.title" textWrap="true" class="" verticalAlignment="top"></Label>          
+          </StackLayout>
+          <StackLayout row="1" verticalAlignment="bottom">
+            <time-span [spans]="item.timespans" [style]="'compact'"></time-span>
+          </StackLayout>
+        </Gridlayout>
     </StackLayout> 
   </ScrollView>
 </StackLayout>

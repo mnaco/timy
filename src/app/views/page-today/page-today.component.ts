@@ -53,7 +53,6 @@ export class PageTodayComponent implements OnInit {
 	// }
 
 	expandTodayView() {
-		console.log(this.expandToday);
 		// let rowSize = this.expandToday ? 240 : 20;
 		let rowSize = this.expandToday ? 'auto, *' : '*, 20';
 		this.classListTodayTodos = this.expandToday ? "" : "expand";

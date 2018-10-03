@@ -5,7 +5,8 @@ export class Todo {
   list: number; 
   desc?: string;
   due?: number;
-  timespans?: number[]
+  timespans?: number[];
+  selected?: boolean;
 
   constructor () {}
 }

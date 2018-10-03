@@ -1,7 +1,7 @@
 <StackLayout class="listOfPendingTodos">  
   <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
       <StackLayout orientation="horizontal"> 
-        <Gridlayout rows="*, 20" cols="*" *ngFor="let item of todos" class="pendingTodo" >
+        <Gridlayout rows="*, 20" cols="*" *ngFor="let item of todos" class="pendingTodo" [class.isActive]="item.id === selectedTodo" (tap)="selectTodo(item.id)">
           <StackLayout row="0" verticalAlignment="top" class="pendingTodoTitle">
             <Label [text]="item.title" textWrap="true" class="" verticalAlignment="top"></Label>          
           </StackLayout>

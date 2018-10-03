@@ -1,11 +1,17 @@
+@import '../../../styles/vars';
+
 .listOfPendingTodos {
   margin: 20 0 10;
-  height: 100;
+  // height: 100;
   vertical-align: top;
 }
 .pendingTodo {
+  animation-name: startTodos;
+  animation-duration: $animationSpeed;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
   width: 160;
-  height: 100;
+  height: 60%;
   padding: 10;
   background: #fff;
   border-width: 1;
@@ -15,7 +21,20 @@
   + .pendingTodo {
     margin-left: 0;
   }
+  &.isActive {
+    width: 260;
+    border-color: $themeColor;
+    border-width: 2;
+    font-size: 22;
+  }
+ 
 }
 .pendingTodoTitle {
   padding-bottom: 10;
+}
+
+
+@keyframes startTodos {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
 }

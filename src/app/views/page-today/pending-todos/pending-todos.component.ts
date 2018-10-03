@@ -14,6 +14,8 @@ import { ShareDataService } from "../../../services/share-data.service";
 export class PendingTodosComponent implements OnInit {
 	todos: Todo[];
 	selectedCat: number = 100;
+	classOpen: boolean = false;
+	selectedTodo: number;
 
 	constructor( 
 		private dataTodosService: DataTodosService, 
@@ -21,9 +23,15 @@ export class PendingTodosComponent implements OnInit {
 		) { }
 
 	ngOnInit() { 
+		console.log(this.selectedTodo);
 		this.shareDataService.castActiveCat.subscribe(catId => {
 			this.selectedCat = catId;
 			this.todos = this.dataTodosService.getTodosByCat(catId);
 		});
+	}
+
+	selectTodo(id){
+    // this.selectedTodo = id;
+		this.selectedTodo = this.selectedTodo !== id ? id : undefined;
 	}
 }

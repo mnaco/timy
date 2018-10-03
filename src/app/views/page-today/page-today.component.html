@@ -29,13 +29,7 @@
             <StackLayout>
               <StackLayout *ngFor="let item of todayTodos" class="todayItem todoItem" [class.completed]='item.complete'>
                 <Label text="[ ] {{ item.title }}" textWrap="true"></Label>
-              </StackLayout>
-              <StackLayout *ngFor="let item of todayTodos" class="todayItem todoItem" [class.completed]='item.complete'>
-                <Label text="[ ] {{ item.title }}" textWrap="true"></Label>
-              </StackLayout>
-              <StackLayout *ngFor="let item of todayTodos" class="todayItem todoItem" [class.completed]='item.complete'>
-                <Label text="[ ] {{ item.title }}" textWrap="true"></Label>
-              </StackLayout>
+              </StackLayout> 
             </StackLayout>
           </ScrollView>
 

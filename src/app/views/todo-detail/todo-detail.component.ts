@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+import { RouterExtensions } from "nativescript-angular/router";
 import { Todo } from "../../classes/todo";
 import { DataTodosService } from "../../services/data-todos.service";
 
@@ -15,11 +16,17 @@ export class TodoDetailComponent implements OnInit {
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
-		private dataTodoService: DataTodosService
+		private dataTodoService: DataTodosService,
+		private routerExtension: RouterExtensions
 	) { }
 
 	ngOnInit() { 
 		const id = +this.activatedRoute.snapshot.params.id;
     this.item = this.dataTodoService.getTodo(id);
+	}
+
+	goBack() {
+		console.log("back");
+		this.routerExtension.back();
 	}
 }

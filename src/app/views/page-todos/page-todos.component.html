@@ -3,14 +3,40 @@
     
   <StackLayout>  
 
+      <!-- today -->
       <StackLayout class="todayHead">
         <today-overview></today-overview>
         <today-time-spans></today-time-spans>
       </StackLayout>
-  
+      <StackLayout class="listItemContainer">
+        <StackLayout 
+          *ngFor="let item of scheduledTodos.today" 
+          class="listItem todoItem" 
+          [class.completed]='item.complete' 
+          [class.isActive]="item.id === selectedTodo"
+          >
+          <GridLayout rows="auto, auto" columns="*, 40" [class.isActive]="item.id === selectedTodo">
+              <StackLayout row="0" col="0" [nsRouterLink]="['../item', item.id]" >       
+                <Label [text]="item.title" ></Label> 
+                <time-span [spans]="item.timespans" [style]="''"></time-span>
+              </StackLayout>
+              <StackLayout row="0" col="1" (tap)="selectTodo(item.id)" >
+                <Label text="&#xf107;" class="expanderLabel fa text-center"></Label>
+              </StackLayout>
+              <StackLayout row="1" colSpan="2" class="reviewSpans">
+                  <today-time-spans></today-time-spans>
+              </StackLayout>
+          </GridLayout>
+        </StackLayout>
+      </StackLayout>
+    
+     
+      <StackLayout class="dateHeader">
+        <Label text="Tomorrow" textWrap="true"></Label>
+      </StackLayout>
       <StackLayout class="listItemContainer">
           <StackLayout 
-            *ngFor="let item of todos" 
+            *ngFor="let item of scheduledTodos.tomorrow" 
             class="listItem todoItem" 
             [class.completed]='item.complete' 
             [nsRouterLink]="['../item', item.id]" >
@@ -18,21 +44,18 @@
               <time-span [spans]="item.timespans" [style]="''"></time-span>
           </StackLayout>
       </StackLayout>
-     
-      <StackLayout class="dateHeader">
-        <Label text="Tomorrow" textWrap="true"></Label>
-      </StackLayout>
-      <StackLayout>
-          <StackLayout *ngFor="let item of todos" class="listItem" >
-            <Label [text]="item.title" class=""></Label>
-            <time-span [spans]="item.timespans" [style]="''"></time-span>
-          </StackLayout>
-      </StackLayout>
 
-      <StackLayout>
-          <StackLayout *ngFor="let item of todos" class="listItem" >
-            <Label [text]="item.title" class=""></Label>
-            <time-span [spans]="item.timespans" [style]="''"></time-span>
+      <StackLayout class="dateHeader">
+          <Label text="Some day" textWrap="true"></Label>
+      </StackLayout>
+      <StackLayout class="listItemContainer">
+          <StackLayout 
+            *ngFor="let item of scheduledTodos.someday" 
+            class="listItem todoItem" 
+            [class.completed]='item.complete' 
+            [nsRouterLink]="['../item', item.id]" >
+              <Label [text]="item.title" ></Label> 
+              <time-span [spans]="item.timespans" [style]="''"></time-span>
           </StackLayout>
       </StackLayout>
     
@@ -43,18 +66,17 @@
 
 
 
-<!-- 
-<GridLayout class="listOflistItems page" rows="*" columns="*">
-  <ListView row="0" [items]="todos" class="page">
-      <ng-template let-item="item" let-odd="odd" let-even="even">
-        <StackLayout class="listItem">
-          <Label [text]="item.title" class=""></Label>
-          <time-span [spans]="item.timespans"></time-span>
-        </StackLayout>
-      </ng-template>
+<!-- TODO transfer into ListView -->
+<!-- <GridLayout class="listOflistItems page" rows="*" columns="*" height="100%">
+  <ListView row="0" [items]="scheduledTodos.tomorrow" >
+    <ng-template let-item="item">
+      <StackLayout class="listItem" background="#aaa">
+        <Label [text]="item.title" class=""></Label>
+      </StackLayout>
+    </ng-template>
   </ListView>
-</GridLayout>
--->
+</GridLayout> -->
+
 
 
 

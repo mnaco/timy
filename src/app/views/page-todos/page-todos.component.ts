@@ -14,6 +14,8 @@ import { isAndroid } from 'tns-core-modules/platform';
 
 export class PageTodosComponent implements OnInit {
 	todos: Todo[] = [];
+	scheduledTodos = [];
+	selectedTodo: number;
 
 	constructor(
 		private dataTodoService: DataTodosService,
@@ -26,5 +28,28 @@ export class PageTodosComponent implements OnInit {
 
 	ngOnInit() {
 		this.todos = this.dataTodoService.getTodos();
+		this.scheduledTodos = this.dataTodoService.getGroupByTodos(this.todos, 'due');
 	}
+
+	selectTodo(id){
+		console.log(id);
+		this.selectedTodo = this.selectedTodo !== id ? id : undefined;
+	}
+
+	// public templateSelector(item: Todo, index: number, items: Todo[]) {
+	// 	if (item.due === 1) {
+	// 		return "today"
+	// 	} 
+		
+	// 	if (item.due === 2) {
+	// 		return "tomorrow";
+	// 	}
+	// 	if (item.due === 0 ) {
+	// 		return "someday";
+	// 	}
+		
+	// 	throw new Error("Unrecognized template!")
+	// }
+	
+
 }

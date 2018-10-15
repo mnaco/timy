@@ -1,1 +1,1 @@
-.listItem{padding:10;border-bottom-width:1;border-bottom-color:#ccc}.dateHeader{background:#333;color:#fff;font-size:24;padding:10}
+.listItem{padding:10;border-bottom-width:1;border-bottom-color:#ccc}.isActive{background:#ccc}.isActive .reviewSpans{background:#999;height:100}.dateHeader{background:#224A64;color:#fff;font-size:24;padding:10}.reviewSpans{height:2;background:#900}

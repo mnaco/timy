@@ -6,7 +6,7 @@ export class DataTodosService {
 
   todos: Todo[] = [
     { id: 0, title: "Introduce the new app including design and mobile test sample", complete: true, list: 0, due: 1, timespans: [100, 100, 100] },
-    { id: 1, title: "Answer emails", complete: false, list: 1, due: 0, timespans: [80, 0] },
+    { id: 1, title: "Answer emails", complete: false, list: 1, due: 2, timespans: [80, 0] },
     { id: 2, title: "Add animation to the top container", complete: false, list: 0, due: 0, timespans: [50, 0] },
     { id: 3, title: "Shopping", complete: false, list: 0, due: 0, timespans: [0, 0, 0, 0, 0, 0, 0] },
     { id: 4, title: "Read the article and write a review", complete: true, list: 1, due: 1, timespans: [100, 100] },
@@ -37,6 +37,27 @@ export class DataTodosService {
 
   getTodayTodos(): Todo[] {
     return this.todos.filter(todo => todo.due === 1);
+  }
+
+  getGroupByTodos(objectArray, property) {
+    return objectArray.reduce(function (acc, obj) {
+      var key = obj[property];
+      
+      // stamps 
+      if (key === 1) {
+        key = 'today'
+      }
+      else if (key === 2) {
+        key = 'tomorrow'
+      }
+      else key = 'someday'
+
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(obj);
+      return acc;
+    }, {});
   }
 
 }

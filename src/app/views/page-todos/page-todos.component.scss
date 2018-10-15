@@ -1,12 +1,25 @@
+@import '../../styles/vars';
+
 .listItem {
   padding: 10;
   border-bottom-width: 1;
   border-bottom-color: #ccc;
 }
 
+.isActive {
+  background: #ccc;
+  .reviewSpans { background: #999; height: 100; }
+}
+
 .dateHeader {
-  background: #333;
+  background: $themeColor;
   color: #fff;
   font-size: 24;
   padding: 10;
+}
+
+.reviewSpans {
+  height: 2;
+  background: #900;
+  // visibility: hidden;
 }

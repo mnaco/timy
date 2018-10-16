@@ -15,16 +15,28 @@
           [class.completed]='item.complete' 
           [class.isActive]="item.id === selectedTodo"
           >
-          <GridLayout rows="auto, auto" columns="*, 40" [class.isActive]="item.id === selectedTodo">
+          <GridLayout rows="auto, auto" columns="*, 40">
               <StackLayout row="0" col="0" [nsRouterLink]="['../item', item.id]" >       
                 <Label [text]="item.title" ></Label> 
-                <time-span [spans]="item.timespans" [style]="''"></time-span>
+                <StackLayout class="currentSpans">
+                  <time-span [spans]="item.timespans" [style]="''"></time-span>
+                </StackLayout>
               </StackLayout>
-              <StackLayout row="0" col="1" (tap)="selectTodo(item.id)" >
+              <StackLayout row="0" col="1" (tap)="openQuickUpdate(item.id)" >
                 <Label text="&#xf107;" class="expanderLabel fa text-center"></Label>
               </StackLayout>
-              <StackLayout row="1" colSpan="2" class="reviewSpans">
-                  <today-time-spans></today-time-spans>
+              <StackLayout row="1" colSpan="2" class="quickUpdate">
+                <GridLayout rows="*" columns="40, *, 40" class="updatedSpans">
+                    <Label row="0" col="0" class="updateSpan less" text="-"></Label>
+                    <StackLayout row="0" col="1">
+                      <time-span [spans]="item.timespans" [style]="''"></time-span>
+                    </StackLayout>
+                    <Label row="0" col="2" class="updateSpan more" text="+"></Label>
+                </GridLayout>
+                <GridLayout rows="" columns="*, auto">
+                  <Label col="0" text="[] No breaks"></Label>
+                  <Label col="1" text="Estimated time: ~0.50h"></Label>
+                </GridLayout>
               </StackLayout>
           </GridLayout>
         </StackLayout>

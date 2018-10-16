@@ -31,11 +31,11 @@ export class PageTodosComponent implements OnInit {
 		this.scheduledTodos = this.dataTodoService.getGroupByTodos(this.todos, 'due');
 	}
 
-	selectTodo(id){
-		console.log(id);
+	openQuickUpdate(id) {
 		this.selectedTodo = this.selectedTodo !== id ? id : undefined;
 	}
 
+	// TODO to use templates when switch to the listview
 	// public templateSelector(item: Todo, index: number, items: Todo[]) {
 	// 	if (item.due === 1) {
 	// 		return "today"

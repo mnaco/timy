@@ -7,8 +7,11 @@
 }
 
 .isActive {
-  background: #ccc;
-  .reviewSpans { background: #999; height: 100; }
+  background: $lightGrey;
+  .currentSpans { visibility: collapsed; }
+  .quickUpdate { 
+    visibility: visible; 
+  }
 }
 
 .dateHeader {
@@ -18,8 +21,27 @@
   padding: 10;
 }
 
-.reviewSpans {
-  height: 2;
-  background: #900;
-  // visibility: hidden;
+.quickUpdate {
+  visibility: collapsed;
+  padding: 10
+}
+
+.updatedSpans { margin: 10 0; }
+.updateSpan {
+  background: #333;
+  color: #fff;
+  font-size: 32;
+  text-align: center;
+  line-height: 1;
+  width: 36;
+  height: 36;
+  padding: 0;
+  &.more { 
+    margin-left: 20;
+    border-radius: 16 3 3 16;
+  }
+  &.less { 
+    margin-right: 20; 
+    border-radius: 3 16 16 3;
+  }
 }

@@ -26,6 +26,11 @@
   padding: 10
 }
 
+.estimatedTime { 
+  font-size: 12; 
+  color: #777;
+}
+
 .updatedSpans { margin: 10 0; }
 .updateSpan {
   background: #333;
@@ -35,13 +40,12 @@
   line-height: 1;
   width: 40;
   height: 40;
+  border-radius: 20;
   padding: 0;
   &.more { 
     margin-left: 20;
-    border-radius: 16 3 3 16;
   }
   &.less { 
     margin-right: 20; 
-    border-radius: 3 16 16 3;
   }
 }

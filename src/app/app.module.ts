@@ -24,6 +24,9 @@ import { TimeSpanComponent } from "./views/widgets/time-span/time-span.component
 import { TodayOverviewComponent } from "./views/widgets/today-overview/today-overview.component";
 import { TodayTimeSpansComponent } from "./views/widgets/today-time-spans/today-time-spans.component";
 
+// plugins
+
+
 
 @NgModule({
     bootstrap: [

@@ -1,0 +1,30 @@
+<ActionBar class="action-bar">
+    <NavigationButton 
+      [nsRouterLink]="['../../home']" 
+      android.systemIcon="ic_menu_back" 
+      (tap)="goBack()"
+      >
+    </NavigationButton>
+    <Label class="action-bar-title" [text]="cat"></Label>
+</ActionBar>
+
+<GridLayout class="listOflistItems page" rows="*" columns="*" height="100%">
+  <ListView row="0" [items]="todos" >
+    <ng-template let-item="item">
+      <StackLayout 
+        class="listItem" 
+        >
+        <Label [text]="item.title" class=""></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
+
+
+
+
+
+        
+
+
+

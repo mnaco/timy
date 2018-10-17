@@ -19,5 +19,9 @@ export class DataCatsService {
     return this.cats;
   }
 
+  getCat(id:number):Cat {
+    return this.cats.filter((item) => item.id === id)[0];
+  }
+
 
 }

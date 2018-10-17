@@ -22,22 +22,26 @@
                   <time-span [spans]="item.timespans" [style]="''"></time-span>
                 </StackLayout>
               </StackLayout>
-              <StackLayout row="0" col="1" (tap)="openQuickUpdate(item.id)" >
-                <Label text="&#xf107;" class="expanderLabel fa text-center"></Label>
+              <StackLayout row="0" col="1" (tap)="!item.complete && openQuickUpdate(item.id)">
+                <Label 
+                  text="&#xf107;" 
+                  class="expanderLabel arrowExpand fa text-center" 
+                  [class.expand]="item.id === selectedTodo" >
+                </Label>
               </StackLayout>
               <StackLayout row="1" colSpan="2" class="quickUpdate">
                 <GridLayout rows="*" columns="40, *, 40" class="updatedSpans">
-                    <Label row="0" col="0" class="updateSpan less" text="-"></Label>
+                    <Label row="0" col="0" class="updateSpan less fa" text="&#xff056;"></Label>
                     <StackLayout row="0" col="1">
                       <time-span [spans]="item.timespans" [style]="''"></time-span>
                     </StackLayout>
-                    <Label row="0" col="2" class="updateSpan more" text="+"></Label>
+                    <Label row="0" col="2" class="updateSpan more fa" text="&#xf055;"></Label>
                 </GridLayout>
-                <GridLayout rows="auto" columns="auto, *, auto">
-                    <CheckBox:CheckBox text="CheckBox Label" checked="false" />
-                  <Label row="0" col="1" text="[] No breaks"></Label>
-                  <Label row="0" col="2" class="estimatedTime" text="Estimated time: ~2.10h"></Label>
+                <GridLayout rows="auto" columns="*, auto">
+                  <CheckBox:CheckBox row="0" col="0" class="noBreaks" text="No breaks" checked="false" />
+                  <Label row="0" col="1" class="estimatedTime" text="Estimated time: ~2.10h"></Label>
                 </GridLayout>
+                <Button text="START NOW" class="btn btnInfo btnStart" width="200"></Button>
               </StackLayout>
           </GridLayout>
         </StackLayout>

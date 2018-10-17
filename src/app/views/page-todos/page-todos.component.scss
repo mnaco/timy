@@ -31,15 +31,15 @@
   color: #777;
 }
 
-.updatedSpans { margin: 10 0; }
+.updatedSpans { margin: 20 0 10; }
 .updateSpan {
-  background: #333;
-  color: #fff;
-  font-size: 32;
+  // background: $themeColor;
+  color: $themeColor;
+  font-size: 36;
   text-align: center;
   line-height: 1;
-  width: 40;
-  height: 40;
+  width: 36;
+  height: 36;
   border-radius: 20;
   padding: 0;
   &.more { 
@@ -48,4 +48,13 @@
   &.less { 
     margin-right: 20; 
   }
+}
+
+// checkbox
+.noBreaks {
+  color: #444;
+}
+
+.completed {
+  .expanderLabel { visibility: collapse; }
 }

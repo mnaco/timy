@@ -15,7 +15,6 @@ import { DataTodosService } from '../../services/data-todos.service';
 export class PageTodayComponent implements OnInit {
 	public rows: string;
 	expandToday: boolean = false;
-	classListTodayTodos: string;
 	todayTodos: Todo[] = [];
 
 	// @ViewChild('testRef') testRef: ElementRef;
@@ -55,7 +54,6 @@ export class PageTodayComponent implements OnInit {
 	expandTodayView() {
 		// let rowSize = this.expandToday ? 240 : 20;
 		let rowSize = this.expandToday ? 'auto, *' : '*, 20';
-		this.classListTodayTodos = this.expandToday ? "" : "expand";
 		this.expandToday = !this.expandToday;
 		this.setRows(rowSize);
 	}

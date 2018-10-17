@@ -5,6 +5,7 @@
 
 // common styles of timy app
 @import 'vars';
+@import 'animations';
 
 .fa {
   font-family: "FontAwesome";
@@ -33,5 +34,15 @@
   &.completed {
     opacity: 0.5;
     text-decoration: line-through;
+  }
+}
+
+// arrow-label to expand the block and rotate follwoing the status
+.arrowExpand {
+  &.expand {
+    animation-duration: $animationSpeed;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: rotate180;
   }
 }

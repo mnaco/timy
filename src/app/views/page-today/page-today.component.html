@@ -5,7 +5,7 @@
     <!-- <GridLayout rows="auto, auto" columns="*"> -->
   <GridLayout [rows]="rows" columns="*">
     
-    <StackLayout row="0" class="layoutTop {{ classListTodayTodos }}">
+    <StackLayout row="0" class="layoutTop" [class.expanded]="expandToday">
       <GridLayout rows="*, auto, 24" columns="" >
 
         <StackLayout row="0">
@@ -38,7 +38,7 @@
                   
         <!-- button -->
         <StackLayout row="1">
-          <Button text="START NOW" class="btn btnInfo btnStart"></Button>
+          <Button text="START NOW" class="btn btnInfo btnStart" width="200"></Button>
         </StackLayout>
         
         
@@ -46,7 +46,12 @@
         <!-- 'expander' trigger -->
         <GridLayout row="2" rows="" columns="*,100,*" class="topExpander">
           <StackLayout col="1" class="expanderLabelBtn" (tap)="expandTodayView($event)">
-            <Label text="&#xf107;" class="expanderLabel fa"></Label>
+            <Label 
+              text="&#xf107;" 
+              class="expanderLabel fa arrowExpand"
+              [class.expand]="expandToday"
+              >
+            </Label>
           </StackLayout>
         </GridLayout>
 

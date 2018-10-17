@@ -13,7 +13,7 @@
   background-color: $themeColor;
   color: #fff;
   margin-bottom: 20;
-  &.expand {
+  &.expanded {
     .listTodayTodos {
       height: auto;
       margin-bottom: 20;
@@ -21,12 +21,6 @@
       animation-name: expandTodayTodos;
       animation-duration: $animationSpeed;
       animation-timing-function: ease-out;
-    }
-    .expanderLabel  {
-      animation-name: rotate180;
-      animation-duration: $animationSpeed;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
     }
   }
 }
@@ -42,9 +36,6 @@
     text-align: center;
     color: #fff;
     font-size: 24;
-  }
-  .expanderLabel {
-    
   }
 }
 
@@ -64,11 +55,6 @@
 
 .expandToday {
   // .layoutTop { height: 500; }
-}
-
-@keyframes rotate180 {
-  0%   { transform: rotate(0deg) }
-  100% { transform: rotate(180deg) }
 }
 
 @keyframes expandTodayTodos {

@@ -25,7 +25,7 @@ import { TodayOverviewComponent } from "./views/widgets/today-overview/today-ove
 import { TodayTimeSpansComponent } from "./views/widgets/today-time-spans/today-time-spans.component";
 
 // plugins
-
+import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import { TodayTimeSpansComponent } from "./views/widgets/today-time-spans/today-
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        TNSCheckBoxModule
     ],
     declarations: [
         AppComponent,

@@ -13,8 +13,10 @@
     <ng-template let-item="item">
       <StackLayout 
         class="listItem" 
+        [nsRouterLink]="['../../cat-todo', item.id]" 
         >
         <Label [text]="item.title" class=""></Label>
+        <time-span [spans]="item.timespans" [style]="''"></time-span>
       </StackLayout>
     </ng-template>
   </ListView>

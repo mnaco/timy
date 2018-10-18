@@ -16,7 +16,10 @@
           [class.isActive]="item.id === selectedTodo"
           >
           <GridLayout rows="auto, auto" columns="*, 40">
-              <StackLayout row="0" col="0" [nsRouterLink]="['../item', item.id]" >       
+              <StackLayout 
+                row="0" col="0" 
+                [nsRouterLink]="['../item', item.id]" 
+              >       
                 <Label [text]="item.title" ></Label> 
                 <StackLayout class="currentSpans">
                   <time-span [spans]="item.timespans" [style]="''"></time-span>

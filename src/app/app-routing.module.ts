@@ -16,7 +16,8 @@ const routes: Routes = [
     { path: 'cats', component: PageCatsComponent, outlet: 'catsTab'},
 
     { path: "item/:id", component: TodoDetailComponent, outlet: "todosTab" },
-    { path: "cat/:id", component: PageCatTodosComponent, outlet: "catsTab" }
+    { path: "cat/:id", component: PageCatTodosComponent, outlet: "catsTab" },
+    { path: "cat-todo/:id", component: TodoDetailComponent, outlet: "catsTab" }
     
 ];
 

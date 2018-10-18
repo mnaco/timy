@@ -23,7 +23,6 @@ export class PendingTodosComponent implements OnInit {
 		) { }
 
 	ngOnInit() { 
-		console.log(this.selectedTodo);
 		this.shareDataService.castActiveCat.subscribe(catId => {
 			this.selectedCat = catId;
 			this.todos = this.dataTodosService.getTodosByCat(catId);

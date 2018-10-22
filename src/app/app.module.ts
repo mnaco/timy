@@ -14,6 +14,7 @@ import { PageTodayComponent } from "./views/page-today/page-today.component";
 import { PageTodosComponent } from "./views/page-todos/page-todos.component";
 import { PageCatsComponent } from "./views/page-cats/page-cats.component";
 import { PageCatTodosComponent } from "./views/page-cat-todos/page-cat-todos.component";
+import { CatDetailsComponent } from "./views/cat-details/cat-details.component";
 import { TodoDetailComponent } from "./views/todo-detail/todo-detail.component";
 
 // partials
@@ -24,6 +25,7 @@ import { PendingCatsComponent } from './views/page-today/pending-cats/pending-ca
 import { TimeSpanComponent } from "./views/widgets/time-span/time-span.component";
 import { TodayOverviewComponent } from "./views/widgets/today-overview/today-overview.component";
 import { TodayTimeSpansComponent } from "./views/widgets/today-time-spans/today-time-spans.component";
+import { FabButtonComponent } from "./views/widgets/fab-button/fab-button.component";
 
 // plugins
 import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
@@ -44,12 +46,14 @@ import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
         PageTodosComponent,
         PageCatsComponent,
         PageCatTodosComponent,
+        CatDetailsComponent,
         TodoDetailComponent,
         PendingTodosComponent,
         PendingCatsComponent,
         TimeSpanComponent,
         TodayOverviewComponent,
-        TodayTimeSpansComponent
+        TodayTimeSpansComponent,
+        FabButtonComponent,
     ],
     providers: [
         DataTodosService,

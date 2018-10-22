@@ -1,0 +1,17 @@
+@import '../../../styles/vars';
+
+.floatButton {
+  width: 48;
+  height: 48;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 24;
+  background: $themeColor;
+}
+.floatButtonText {
+  text-align: center;
+  color: #fff;
+  font-size: 36;
+  margin-top: -4;
+  margin-left: 1;
+}

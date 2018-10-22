@@ -1,12 +1,18 @@
-<StackLayout>
-  <!-- <Label class="page-cats" text="{{ title }}"></Label> -->
-  <ListView [items]="cats" class="list-group">
-      <ng-template let-item="item" let-odd="odd" let-even="even">
-        <StackLayout
-          [nsRouterLink]="['../cat', item.id]"
-        >
-          <Label [text]="item.name" class="list-group-item"></Label>
-        </StackLayout>
-      </ng-template>
-  </ListView>
-</StackLayout>
+<AbsoluteLayout>
+    
+      <ListView [items]="cats" class="list-group" height="100%" width="100%">
+          <ng-template let-item="item" let-odd="odd" let-even="even">
+            <StackLayout [nsRouterLink]="['../cat', item.id]" >
+              <Label [text]="item.name" class="list-group-item"></Label>
+            </StackLayout>
+          </ng-template>
+      </ListView>
+      
+      <StackLayout class="floatButtonContainer">
+        <fab-button></fab-button>
+      </StackLayout>
+
+</AbsoluteLayout>
+
+
+

@@ -8,12 +8,12 @@ import { DataCatsService } from "../../services/data-cats.service";
 
 @Component({
 	moduleId: module.id,
-	selector: 'page-cat-todos',
-	templateUrl: './page-cat-todos.component.html',
-	styleUrls: ['./page-cat-todos.component.css']
+	selector: 'cat-todos',
+	templateUrl: './cat-todos.component.html',
+	styleUrls: ['./cat-todos.component.css']
 })
 
-export class PageCatTodosComponent implements OnInit {
+export class CatTodosComponent implements OnInit {
 	todos: Todo[];
 	cat: any;
 

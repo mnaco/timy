@@ -5,9 +5,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { PageTodayComponent } from "./views/page-today/page-today.component";
 import { PageTodosComponent } from "./views/page-todos/page-todos.component";
 import { PageCatsComponent } from "./views/page-cats/page-cats.component";
-import { PageCatTodosComponent } from "./views/page-cat-todos/page-cat-todos.component";
+import { CatTodosComponent } from "./views/cat-todos/cat-todos.component";
 import { TodoDetailComponent } from "./views/todo-detail/todo-detail.component";
 import { CatDetailsComponent } from "./views/cat-details/cat-details.component";
+import { NewCatComponent } from "./views/new-cat/new-cat.component";
 
 const routes: Routes = [
     
@@ -17,11 +18,11 @@ const routes: Routes = [
     { path: 'cats', component: PageCatsComponent, outlet: 'catsTab'},
     
     { path: "item/:id", component: TodoDetailComponent, outlet: "todosTab" },
-    { path: "cat/:id", component: PageCatTodosComponent, outlet: "catsTab" },
+    { path: "cat/:id", component: CatTodosComponent, outlet: "catsTab" },
     
     { path: "cat/todo/:id", component: TodoDetailComponent, outlet: "catsTab" },
     
-    { path: 'newcat', component: CatDetailsComponent, outlet: 'catsTab' }
+    { path: 'newcat', component: NewCatComponent, outlet: 'catsTab' }
 ];
 
 @NgModule({

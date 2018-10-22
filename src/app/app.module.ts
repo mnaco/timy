@@ -13,9 +13,10 @@ import { ShareDataService } from "./services/share-data.service";
 import { PageTodayComponent } from "./views/page-today/page-today.component";
 import { PageTodosComponent } from "./views/page-todos/page-todos.component";
 import { PageCatsComponent } from "./views/page-cats/page-cats.component";
-import { PageCatTodosComponent } from "./views/page-cat-todos/page-cat-todos.component";
+import { CatTodosComponent } from "./views/cat-todos/cat-todos.component";
 import { CatDetailsComponent } from "./views/cat-details/cat-details.component";
 import { TodoDetailComponent } from "./views/todo-detail/todo-detail.component";
+import { NewCatComponent } from "./views/new-cat/new-cat.component";
 
 // partials
 import { PendingTodosComponent } from './views/page-today/pending-todos/pending-todos.component';
@@ -45,7 +46,7 @@ import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
         PageTodayComponent,
         PageTodosComponent,
         PageCatsComponent,
-        PageCatTodosComponent,
+        CatTodosComponent,
         CatDetailsComponent,
         TodoDetailComponent,
         PendingTodosComponent,
@@ -53,7 +54,8 @@ import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
         TimeSpanComponent,
         TodayOverviewComponent,
         TodayTimeSpansComponent,
-        FabButtonComponent,
+        NewCatComponent,
+        FabButtonComponent
     ],
     providers: [
         DataTodosService,
